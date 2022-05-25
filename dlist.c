@@ -12,7 +12,7 @@ void main()
 	struct node *head=NULL,*pos=NULL, *tail=NULL;
 	while(1)
 	{
-	printf("\n\t\tMenu\n1.Append\n2.Display(Forward)\n3.Display(Reverse)\n4.Exit\n\nEnter choice: ");
+	printf("\n\t\tMenu\n1.Append\n2.Display(Forward)\n3.Display(Reverse)\n 4.delete\n 4.Exit\n\nEnter choice: ");
 	scanf("%d",&ch);
 	switch(ch)
 	{
@@ -56,9 +56,19 @@ void main()
 			{
 			printf("\t%d",pos->data);
 			pos=pos-> prev;
-			} break;
-		}
+			} break;}
 		case 4:
+		{
+			struct node*temp=head
+			for(i=0;i<entry-1;i++)
+			temp=temp->next;
+			struct node *del=temp->next;
+			temp->next->prev=temp;
+			del->prev=NULL;
+			del->next=NULL;
+			free(del);
+		}
+		case 5:
 		{
 			printf("Goodbye!");
 			exit(0);
